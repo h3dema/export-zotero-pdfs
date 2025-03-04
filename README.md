@@ -55,4 +55,4 @@ pyenv activate zotero
 pyinstaller --onefile --name export_zotero main.py
 ```
 
-The executable named `export_zotero` will be placed in `./dist/main`.
+The executable named `export_zotero` will be placed in `./dist`.
