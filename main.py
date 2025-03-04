@@ -1,3 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+
+@@@  @@@  @@@@@@   @@@@@@@   @@@@@@@@  @@@@@@@@@@    @@@@@@
+@@@  @@@  @@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@@
+@@!  @@@      @@@  @@!  @@@  @@!       @@! @@! @@!  @@!  @@@
+!@!  @!@      @!@  !@!  @!@  !@!       !@! !@! !@!  !@!  @!@
+@!@!@!@!  @!@!!@   @!@  !@!  @!!!:!    @!! !!@ @!@  @!@!@!@!
+!!!@!!!!  !!@!@!   !@!  !!!  !!!!!:    !@!   ! !@!  !!!@!!!!
+!!:  !!!      !!:  !!:  !!!  !!:       !!:     !!:  !!:  !!!
+:!:  !:!      :!:  :!:  !:!  :!:       :!:     :!:  :!:  !:!
+::   :::  :: ::::   :::: ::   :: ::::  :::     ::   ::   :::
+ :   : :   : : :   :: :  :   : :: ::    :      :     :   : :
+
+
+Copyright 2025 by Henrique Duarte Moura.
+All rights reserved.
+
+This file is part of export-zotero-pdfs,
+and is released under the "MIT License Agreement".
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+Please see the LICENSE file that should have been included as part of this package.
+"""
 import argparse
 import os
 import sqlite3
