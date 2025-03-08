@@ -346,6 +346,6 @@ if __name__ == "__main__":
                 if os.path.exists(destination_path) and not args.overwrite:
                     continue
                 os.makedirs(os.path.dirname(destination_path), exist_ok=True)
-                shutil.copy(pdf_path, destination_path)
+                shutil.copy2(pdf_path, destination_path)
 
     conn.close()
