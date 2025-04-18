@@ -342,7 +342,7 @@ if __name__ == "__main__":
             if pdf_path and os.path.exists(pdf_path):
                 destination_path = os.path.join(args.output_path, collection["collectionName"], os.path.basename(pdf_path))
                 exists = os.path.exists(destination_path)
-                newer = exists and os.path.getmtime(pdf_path) <= os.path.getmtime(destination_path):
+                newer = exists and os.path.getmtime(pdf_path) <= os.path.getmtime(destination_path)
                 # import pdb; pdb.set_trace()
                 if not exists or newer or args.overwrite:
                     # copy if not exists, or is newer, or overwrite is set
