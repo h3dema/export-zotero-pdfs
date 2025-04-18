@@ -335,19 +335,24 @@ if __name__ == "__main__":
     # Export pdfs
     #
     # -----------------------------
-    pbar = tqdm(total=sum([len(collection["selected_items"]) for collection in collections]))
+    N = sum([len(collection["selected_items"]) for collection in collections])
+    print("Total number of pdfs to process: {}".format(N))
+    pbar = tqdm(total=N, disable=False)
     for collection in collections:
         for selected_item in collection["selected_items"]:
             pdf_path = selected_item.get("pdf")
             if pdf_path and os.path.exists(pdf_path):
                 destination_path = os.path.join(args.output_path, collection["collectionName"], os.path.basename(pdf_path))
                 exists = os.path.exists(destination_path)
-                newer = exists and os.path.getmtime(pdf_path) <= os.path.getmtime(destination_path)
-                # import pdb; pdb.set_trace()
-                if not exists or newer or args.overwrite:
+                # newer = not exists or int(os.path.getmtime(pdf_path)) < int(os.path.getmtime(destination_path))
+                newer = not exists or int(os.stat(pdf_path).st_mtime) > int(os.stat(destination_path).st_mtime)
+                if newer or args.overwrite:
                     # copy if not exists, or is newer, or overwrite is set
                     os.makedirs(os.path.dirname(destination_path), exist_ok=True)
                     shutil.copy2(pdf_path, destination_path)
-        pbar.update(1)
+                    print("Missing: {}, newer: {}, pdf mtime: {}, destination mtime: {} > Copying {} to {}".format(not exists, newer, os.path.getmtime(pdf_path), os.path.getmtime(destination_path), pdf_path, destination_path))
 
+            pbar.update(1)
+
+    pbar.close()
     conn.close()
