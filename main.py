@@ -350,7 +350,7 @@ if __name__ == "__main__":
                     # copy if not exists, or is newer, or overwrite is set
                     os.makedirs(os.path.dirname(destination_path), exist_ok=True)
                     shutil.copy2(pdf_path, destination_path)
-                    print("Missing: {}, newer: {}, pdf mtime: {}, destination mtime: {} > Copying {} to {}".format(not exists, newer, os.path.getmtime(pdf_path), os.path.getmtime(destination_path), pdf_path, destination_path))
+                    # print("Missing: {}, newer: {}, pdf mtime: {}, destination mtime: {} > Copying {} to {}".format(not exists, newer, os.path.getmtime(pdf_path), os.path.getmtime(destination_path), pdf_path, destination_path))
 
             pbar.update(1)
 
